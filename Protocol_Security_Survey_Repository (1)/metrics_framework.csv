@@ -1,0 +1,13 @@
+metric_family,security_property,what_it_measures,works_in_corpus,coverage
+Attack success rate,"C, I, A",Share of attacks whose success event occurs,Almost all,Common
+Unauthorised action rate,"I, authority","Harmful actions actually executed, e.g., files written, messages sent","MCP-SafetyBench, MSB, Manual Lies, Pitfall Lab, A2ASecBench, AIP-Bench",Common (as ASR)
+Data exfiltration,C,Sensitive data leaving its boundary,"Manual Lies, TrustShiftProbe, HarnessSafe, MCP-to-A2A study",Some
+Availability impact,A,"Timeouts, loops, latency under flooding","A2ASecBench, Louck et al.",Rare
+Privilege-boundary violation,Authority,Actions or access beyond delegated privileges,"AIP-Bench, Louck et al.; proposed by Dehghantanha and Homayoun (2026)",Rare
+Propagation and consequence,"I, authority",Spread across servers or agents; effect on the final outcome,"Agent-Canary-MAS (PTCR), ProtoAmp (cascade rate)",Rare
+Attribution,–,Identifying the responsible agent or entry point,Agent-Canary-MAS (Audit-F1),Rare
+Containment,–,How far an attack progresses before it is stopped,HarnessSafe (stage ladder),Rare
+Recovery effectiveness,"I, A",Return to a correct state after an attack,–,None
+Security–utility trade-off,–,Task success with and without attack or defense,"MSB (NRP), MCP-SafetyBench, A2ASecBench, ProtoAmp, Agent-Canary-MAS",Some
+Refusal and detection,–,Agent recognises and refuses the attack,"MCPTox, MCPSecBench, Beyond the Protocol",Some
+Defense false-positive rate,–,Benign requests blocked by a defense,"AIP-Bench, TrustShiftProbe",Rare
