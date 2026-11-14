@@ -1,0 +1,55 @@
+% ---------------------------------------------------------------------
+% Main benchmark comparison table, grouped by protocol layer.
+% Columns match the literature matrix spreadsheet.
+% Env: R = real protocol implementation/deployment, E = emulated/custom,
+%      S = simulated.
+% Verified: Call = intended tool call; Effect = executed side effect /
+%   state check; Cons. = downstream consequence; Mixed = rules + LLM judge;
+%   Manual = manual analysis.
+% Double-check every cell against the paper itself.
+% ---------------------------------------------------------------------
+\begin{table*}[t]
+\centering
+\caption{Security benchmarks and evaluation studies for protocol-connected LLM agent systems.
+MA = multi-agent; Env = environment (R real, E emulated/custom, S simulated);
+Def. = defense evaluated; ASR = attack success rate; n/s = not stated; $\circ$ in Code = access restricted on request. $^\dagger$MCP is one of seven carrier families (70 of 328 cases).}
+\label{tab:benchmarks}
+\scriptsize
+\setlength{\tabcolsep}{2.5pt}
+\begin{tabularx}{\textwidth}{@{}l c l c c c >{\raggedright\arraybackslash}X c c c@{}}
+\toprule
+\textbf{Benchmark} & \textbf{Year} & \textbf{Protocol} & \textbf{MA} & \textbf{Env} & \textbf{Models} &
+\textbf{Threats; scale; metrics} & \textbf{Verified} & \textbf{Def.} & \textbf{Code} \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Agent--tool protocol (\MCP)}} \\
+MCPTox \cite{wang2025mcptox}                  & 2026 & \MCP & \xmark & R & 16 (20 settings) & Tool poisoning; 45 servers, 1,348 cases; ASR, refusal rate & Call & \xmark & \cmark \\
+MCP-SafetyBench \cite{zong2026mcpsafetybench} & 2026 & \MCP & \xmark & R & 13 & 20 server/host/user attacks; 245 cases; TSR, ASR & Effect & \cmark & \cmark \\
+MCPSecBench \cite{yang2025mcpsecbench}        & 2025 & \MCP & \xmark & E & 3 hosts & 17 attacks on client, protocol, server, host; ASR, refusal rate & Effect & \cmark & \cmark \\
+MSB \cite{zhang2026msb}                       & 2026 & \MCP & \xmark & R & 10 & 12 attacks over planning, invocation, response; 2,000 cases; ASR, PUA, NRP & Effect & \cmark & \cmark \\
+Manual Lies \cite{liu2026manuallies}          & 2026 & \MCP & \xmark & E & 8 & Description poisoning; 32 cases; ASR, UCC & Effect & \cmark & \xmark \\
+COPEX \cite{birhan2026copex}                  & 2026 & \MCP & \xmark & E & 9 & 25 attacks over model, client, server, transport; 125 scenarios; ASR & Mixed & \cmark & \cmark \\
+Beyond the Protocol \cite{song2026beyond}     & 2026 & \MCP & \xmark & R & 5 + 5 clients & 4 vectors incl.\ puppet, rug pull; registry and user study; ASR, refusal rate & Effect & \xmark & \cmark \\
+ProtoAmp \cite{maloyan2026breaking}           & 2026 & \MCP & \xmark & E & 3 & 847 scenarios; MCP vs.\ non-MCP amplification, cascade rate & n/s & \cmark & \xmark \\
+First Look \cite{li2026firstlook}             & 2026 & \MCP & \xmark & R & 4 hosts, 3 LLMs & Registry hijacking, tool poisoning, shadowing, dangling tools; 67,057 servers measured; ASR & Call & \xmark & \xmark \\
+MCPXKIT \cite{guo2026mcpxkit}                 & 2026 & \MCP & \xmark & R & 3 hosts, 7 LLMs & 28 attack methods in 4 classes; 40 prompts each; ASR & Effect & \xmark & \pmark \\
+Pitfall Lab \cite{hao2026pitfall}             & 2026 & \MCP & \xmark & E & 4 & Poisoning, puppet, multi-modal injection; server pitfalls; 2,579 runs; ASR & Effect & \cmark & \cmark \\
+TrustShiftProbe \cite{rostamzadeh2026trustshift} & 2026 & \MCP & \xmark & R & 6 & Staged-trust (rug-pull) attacks; 360 cases; ASR, FPR & Effect & \cmark & \xmark \\
+HarnessSafe \cite{zhang2026harnesssafe}       & 2026 & \MCP{}$^\dagger$ & \pmark & R & 7 harnesses & Persistent carriers incl.\ MCP state; 328 cases; stage score, ASR & Mixed & \xmark & \cmark \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Agent--agent and domain-specific protocols}} \\
+A2ASecBench \cite{li2026a2asecbench}          & 2026 & \AtoA & \cmark & R & 1 (+4) & 6 attacks (spoofing, cloaking, flooding, cycle overflow, forgery, script injection); 1,800 tasks; ASR, utility & Effect & \cmark & \cmark \\
+Agent-Canary-MAS \cite{liu2026agentcanarymas} & 2026 & \AtoA, ANP, BCS & \cmark & E & 3 & 39 attacks; 975 task pairs; ASR, PTCR, Audit-F1 & Cons. & \cmark & \xmark \\
+AIP-Bench \cite{louck2026aipbench}            & 2026 & AP2, uAgents, Coral & \cmark & R & 8 & 33 vulnerabilities (5 structural classes, 1 semantic); 14 scenarios; ASR, FPR & Effect & \cmark & \cmark \\
+Louck et al.\ \cite{louck2025comparative}     & 2026 & \AtoA, ACP, Coral & \cmark & R & -- & Implementation audit, 14-point taxonomy; automated attack scripts & Effect & -- & \cmark \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Cross-protocol}} \\
+MCP-to-A2A study \cite{mahapatra2026egress}   & 2026 & \MCP{} + \AtoA & \cmark & E & 4 & Data egress from MCP tool to remote A2A agent; 480 trials; egress rate & Effect & \xmark & \cmark \\
+\midrule
+\multicolumn{10}{@{}l}{\textit{Baselines without a protocol layer (not part of the systematic comparison)}} \\
+AgentDojo \cite{debenedetti2024agentdojo}     & 2024 & -- & \xmark & S & 10 & Indirect prompt injection; 629 cases; utility, ASR & Effect & \cmark & \cmark \\
+RAS-Eval \cite{fu2025raseval}                 & 2025 & (MCP format) & \xmark & S/R & \todo{} & 80 test cases, 3,802 attack tasks over 11 CWE categories; TCR, ASR & Effect & \xmark & \cmark \\
+InjecAgent \cite{zhan2024injecagent}          & 2024 & -- & \xmark & S & \todo{} & Indirect prompt injection in tool-integrated agents & \todo{} & \todo{} & \cmark \\
+ASB \cite{zhang2025asb}                       & 2025 & -- & \xmark & S & \todo{} & Attacks and defenses across agent scenarios & \todo{} & \cmark & \cmark \\
+\bottomrule
+\end{tabularx}
+\end{table*}
