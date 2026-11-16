@@ -47,9 +47,14 @@ MCP-to-A2A study \cite{mahapatra2026egress}   & 2026 & \MCP{} + \AtoA & \cmark &
 \midrule
 \multicolumn{10}{@{}l}{\textit{Baselines without a protocol layer (not part of the systematic comparison)}} \\
 AgentDojo \cite{debenedetti2024agentdojo}     & 2024 & -- & \xmark & S & 10 & Indirect prompt injection; 629 cases; utility, ASR & Effect & \cmark & \cmark \\
-RAS-Eval \cite{fu2025raseval}                 & 2025 & (MCP format) & \xmark & S/R & \todo{} & 80 test cases, 3,802 attack tasks over 11 CWE categories; TCR, ASR & Effect & \xmark & \cmark \\
-InjecAgent \cite{zhan2024injecagent}          & 2024 & -- & \xmark & S & \todo{} & Indirect prompt injection in tool-integrated agents & \todo{} & \todo{} & \cmark \\
-ASB \cite{zhang2025asb}                       & 2025 & -- & \xmark & S & \todo{} & Attacks and defenses across agent scenarios & \todo{} & \cmark & \cmark \\
+RAS-Eval \cite{fu2025raseval}                 & 2025 & (MCP format) & \xmark & S/R & 6 & 80 test cases, 3,802 attack tasks over 11 CWE categories, 7 scenarios; TCR, ASR & Call & \xmark & \cmark \\
+% RAS-Eval (arXiv v1): model count inconsistent in paper (intro 6, Sec. 3.1.1 eight, Table 6 lists 6, conclusion 7); attack tests on GLM4-Flash only. ASR = attacker tool in call sequence + output contains target content (Eq. 7) -> Call.
+InjecAgent \cite{zhan2024injecagent}          & 2024 & -- & \xmark & S & 30 & Indirect prompt injection; 1,054 cases (17 user tools, 62 attacker tools); direct harm, data stealing; ASR & Call & \xmark & \cmark \\
+% InjecAgent (Findings ACL 2024): 30 agents (28 prompted, 2 fine-tuned); success = agent issues attacker tool call, tool responses simulated with GPT-4; no defense evaluated.
+ASB \cite{zhang2025asb}                       & 2025 & -- & \xmark & S & 13 & 10 scenarios, 400+ tools; prompt injection, memory poisoning, PoT backdoor, mixed attacks; 11 defenses; ASR, NRP & Call & \cmark & \cmark \\
+% ASB (ICLR 2025): attack succeeds if the agent uses all attack tools -> Call.
+ToolEmu \cite{ruan2024toolemu}                & 2024 & -- & \xmark & S & 5 & Risky actions from underspecified benign instructions; 36 toolkits, 311 tools, 144 cases; safety and helpfulness scores & Call & \cmark & \cmark \\
+% ToolEmu (ICLR 2024): LM-emulated tools, GPT-4 safety evaluator on trajectories, no real effects; defense = safety prompting.
 \bottomrule
 \end{tabularx}
 \end{table*}

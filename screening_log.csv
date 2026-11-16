@@ -13,7 +13,7 @@ id,name,title,authors,year,venue,status,found_via,decision,reason
 12,Breaking the protocol,Breaking the Protocol: Security Analysis of the Model Context Protocol Specification and Prompt Injection Vulnerabilities in Tool-Integrated LLM Agents,"Narek Maloyan, Dmitry Namiot",2026,arXiv:2601.17549,Preprint,Google Scholar search,Included,
 13,RAS-Eval,RAS-Eval: A Comprehensive Benchmark for Security Evaluation of LLM Agents in Real-World Environments,"Y Fu, X Yuan, D Wang",2025,arXiv:2506.15253,Preprint,Google Scholar search,Baseline,
 14,AgentDefense,(unknown: find on Google Scholar),,,,,Backward snowballing,Excluded,E4
-15,ToolEmu,Identifying the Risks of LM Agents with an LM-Emulated Sandbox (ToolEmu),,,,,Backward snowballing,Baseline,
+15,ToolEmu,Identifying the Risks of LM Agents with an LM-Emulated Sandbox (ToolEmu),"Yangjun Ruan, Honghua Dong, Andrew Wang, Silviu Pitis, Yongchao Zhou, Jimmy Ba, Yann Dubois, Chris J. Maddison, Tatsunori Hashimoto",2024,International Conference on Learning Representations (ICLR) 2024; arXiv:2309.15817,Peer-reviewed,Backward snowballing,Baseline,
 16,SecureWebArena,SecureWebArena: A Holistic Security Evaluation Benchmark for LVLM-based Web Agents,,,,,Backward snowballing,Excluded,Fails I3
 17,ClawsBench,(find title on Google Scholar),,,,,Backward snowballing,Excluded,Fails I3
 18,AgentCanary,(find title on Google Scholar),,,,,Backward snowballing,Excluded,Fails I3
@@ -219,3 +219,5 @@ id,name,title,authors,year,venue,status,found_via,decision,reason
 218,Self-evolving agent safety,"Safety in Self-Evolving LLM Agent Systems: Threats, Amplification, and Case Studies","R Lin, X Deng, Q Li, J Ma, Y Feng, Y Qing, Z Li, et al.",2026,arXiv preprint,Preprint,Verification search (15 Nov),Excluded,"Fails I1/I3: threat analysis of self-evolving agents, no protocol benchmark"
 219,Agent as kernel SoK,When the Agent Becomes the Kernel: A Systematization of Security on the Path to AI-Native Operating Systems,"L Zhang, Y Sun, J Shi",2026,arXiv:2609.23700,Preprint,Verification search (15 Nov),Excluded,Fails I1: SoK
 220,AI code sandboxes study,AI Code Sandboxes: A Comparative Security Study. Part 1 of 2: Engine-Level Properties,"G Andronchik, P Lokhmakov",2026,arXiv:2606.08433,Preprint,Verification search (15 Nov),Excluded,"Fails I2/I3: sandbox engine measurement, no agent protocol"
+221,InjecAgent,InjecAgent: Benchmarking Indirect Prompt Injections in Tool-Integrated Large Language Model Agents,"Qiusi Zhan, Zhixiang Liang, Zifan Ying, Daniel Kang",2024,Findings of the Association for Computational Linguistics: ACL 2024,Peer-reviewed,Backward snowballing (cited by MCPTox),Baseline,
+222,ASB,Agent Security Bench (ASB): Formalizing and Benchmarking Attacks and Defenses in LLM-based Agents,"Hanrong Zhang, Jingyuan Huang, Kai Mei, Yifei Yao, Zhenting Wang, Chenlu Zhan, Hongwei Wang, Yongfeng Zhang",2025,International Conference on Learning Representations (ICLR) 2025,Peer-reviewed,Backward snowballing,Baseline,
