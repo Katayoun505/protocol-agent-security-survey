@@ -1,8 +1,0 @@
-boundary,attacker_position,example_threats
-B1 User–agent,Malicious user,"Malicious requests, user impersonation"
-B2 Tool metadata–model,Malicious server,"Tool poisoning, shadowing, rug pulls"
-B3 Host–server channel,"Malicious server, network attacker","Parameter tampering, man-in-the-middle, rebinding"
-B4 Server–external content,Content provider,Indirect injection via tool outputs and resources
-B5 Registry–host,Malicious publisher,Malicious or hijacked registry entries
-B6 Agent–agent,Malicious agent,"AgentCard spoofing, task flooding, artifact injection"
-B7 Tool layer–agent layer,Any of the above,Propagation of tool-layer compromise to other agents

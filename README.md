@@ -14,7 +14,7 @@ The survey systematically reviews security benchmarks and evaluation studies for
 | `trust_boundaries.csv` | The seven trust boundaries (B1–B7) of a protocol-connected agent system |
 | `taxonomy.csv` | Taxonomy of protocol-level attacks by layer, workflow stage and trust boundary, mapped to the benchmarks that evaluate them |
 | `metrics_framework.csv` | Security metric families and how often the corpus measures each |
-| `latex/benchmark_comparison.tex` | The comparison table from the paper, ready to include in LaTeX |
+| `benchmark_comparison.tex` | The comparison table from the paper, ready to include in LaTeX |
 
 ## Scope and method in brief
 
