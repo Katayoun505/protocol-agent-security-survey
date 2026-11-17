@@ -8,8 +8,8 @@ The survey systematically reviews security benchmarks and evaluation studies for
 
 | File | What it contains |
 |---|---|
-| `benchmark_inventory.csv` | The 18 included benchmarks and evaluation studies plus 5 baselines: protocol, multi-agent support, environment, models, threats, scale, metrics, success-verification level, defenses, code availability, venue |
-| `screening_log.csv` | All 222 screened records with the inclusion decision and the reason for exclusion |
+| `benchmark_inventory.csv` | The 19 included benchmarks and evaluation studies plus 5 baselines: protocol, multi-agent support, environment, models, threats, scale, metrics, success-verification level, defenses, code availability, venue |
+| `screening_log.csv` | All 229 screened records with the inclusion decision and the reason for exclusion |
 | `search_log.csv` | Every Google Scholar query and "Cited by" list used, with the number of results and pages screened |
 | `trust_boundaries.csv` | The seven trust boundaries (B1–B7) of a protocol-connected agent system |
 | `taxonomy.csv` | Taxonomy of protocol-level attacks by layer, workflow stage and trust boundary, mapped to the benchmarks that evaluate them |
@@ -21,7 +21,7 @@ The survey systematically reviews security benchmarks and evaluation studies for
 - **Time window:** January 2023 to October 2026 (state on 17 November 2026).
 - **Search:** Google Scholar keyword queries, plus backward and forward snowballing ("Cited by" lists of MCPTox, MSB, MCP-SafetyBench and A2ASecBench).
 - **Inclusion:** (I1) the work proposes a benchmark, testbed or evaluation framework, or is an evaluation study; (I2) it evaluates the security of LLM agents or their protocol infrastructure, with at least one LLM agent, host or client evaluated; (I3) the system communicates through a standardised agent protocol.
-- **Result:** 222 records screened, 18 included, 5 tool-use baselines without a protocol layer, 199 excluded.
+- **Result:** 229 records screened, 19 included, 5 tool-use baselines without a protocol layer, 205 excluded.
 - Every number in the inventory was checked against the final published version of each paper (or the latest arXiv version for preprints).
 
 ## Column notes for `benchmark_inventory.csv`
