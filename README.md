@@ -26,7 +26,7 @@ The survey systematically reviews security benchmarks and evaluation studies for
 
 ## Column notes for `benchmark_inventory.csv`
 
-- **environment:** R = real protocol implementation, deployment, host or harness; E = emulated or custom; S = simulated.
+- **environment:** R = at least one real, publicly released protocol implementation, server, host, client or harness is part of the evaluated system; E = all protocol components built or emulated by the authors; S = tools simulated without a protocol implementation.
 - **success_verified_at:** Call = the agent issues the malicious call; Effect = a side effect actually occurs; Cons. = downstream consequence for the task; n/s = not stated.
 - **code_released:** yes / no / restricted (available on request).
 
